@@ -2,7 +2,7 @@
 
 *仅测试在Unity上开发Meta Quest应用的情况*
 
-*Last Available in 7.13.2024*
+*Last Available in 7.18.2024*
 
 在Unity中使用ScreenShotLoader插件来捕获摄像头画面，将设备拍摄到的截屏图像传出。
 
