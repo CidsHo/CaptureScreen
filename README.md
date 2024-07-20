@@ -1,30 +1,31 @@
-# 捕捉Quest3中的摄像头截图画面并回传
+# Capture the Camera Screenshots in Quest3 and Return Them for Testing Purposes
 
-*仅测试在Unity上开发Meta Quest应用的情况*
+*Tested on developing Meta Quest applications in Unity only*
 
 *Last Available in 7.18.2024*
 
-在Unity中使用ScreenShotLoader插件来捕获摄像头画面，将设备拍摄到的截屏图像传出。
+Use the ScreenShotLoader plugin in Unity to capture camera images and export the screenshots taken by the device.
 
-因为Quest3目前没有开放摄像头权限，无法使用实时视频流来实现识别操作，故出此下策来实现一些功能。
+Since Quest3 currently does not have camera access permissions, it is not possible to use real-time video streams for recognition operations. Hence, this workaround is used to achieve some functionalities.
 
-## 0. 准备
+## 0. Preparation
 
-1. 将[ScreenShotLoader](https://github.com/CidsHo/CaptureScreen/tree/main/ScreenShotLoader)安装至项目Assets下，同时载入Meta XR All-in-one SDK。
-2. 在Edit>Project Settings>Player>Android>Publishing Settings>Build中，将**Custom Main Manifest, Custom Main Gradle Template, Custom Gradle Properties Template**勾选。此举将启用Assets/Plugins/Android下的AndroidManifest.xml, mainTemplate.gradle, gradleTemplate.properties。
+1. Install [ScreenShotLoader](https://github.com/CidsHo/CaptureScreen/tree/main/ScreenShotLoader) in the project **Assets** and also load the Meta XR All-in-one SDK.
+2. In Unity, go to Edit > Project Settings > Player > Android > Publishing Settings > Build, check**Custom Main Manifest, Custom Main Gradle Template, Custom Gradle Properties Template**. This will enable the use of AndroidManifest.xml, mainTemplate.gradle, and gradleTemplate.properties in Assets/Plugins/Android.
 
-3. 将插件ScreenShotLoader/Plugins/Android中的mainTemplate.gradle, gradleTemplate.properties替换Assets/Plugins/Android下的对应文件。
+3. Replace the mainTemplate.gradle and gradleTemplate.properties in Assets/Plugins/Android with those in ScreenShotLoader/Plugins/Android.
 
-4. 编辑Assets/Plugins/Android下的AndroidManifest.xml, 在<application>段前添加以下配置：
+4. Edit AndroidManifest.xml in Assets/Plugins/Android and add the following configuration before the **<application>** segment:
 ```
 	<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE"
 				   android:maxSdkVersion="32" />
 	<uses-permission android:name="com.oculus.permission.SET_VR_DEVICE_PARAMS" />
 	<uses-permission android:name="com.oculus.permission.READ_VR_DEVICE_PARAMS" />
 ```
-此举将允许应用读取Quest3头显中的文件存储位置。
+This will allow the application to read the screenshot storaged in the Quest3 headset. (Further authorization is required in the Horizon OS)
 
-## 1. 配置插件
+## 1. Configuring
 
+## 2. Explaination
 
 *In progress*
