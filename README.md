@@ -24,7 +24,7 @@ Since Quest3 currently does not have camera access permissions, it is not possib
 ```
 This will allow the application to read the screenshot storaged in the Quest3 headset. (Further authorization is required in Horizon OS)
 
-## 1. Configuring
+## 1. Configuration
 
 ## 2. Explaination
 
