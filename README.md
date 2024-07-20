@@ -1,4 +1,4 @@
-# Capture the Camera Screenshots in Quest3 and Return Them for Testing Purposes
+# Snap! Capture the Camera Screenshots in Quest3 and Review Them Immediately
 
 *Tested on developing Meta Quest applications in Unity only*
 
