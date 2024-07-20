@@ -8,7 +8,7 @@ Use the ScreenShotLoader plugin in Unity to capture camera images and export the
 
 Since Quest3 currently does not have camera access permissions, it is not possible to use real-time video streams for recognition operations. Hence, this workaround is used to achieve some functionalities.
 
-[Unity project source file](https://github.com/CidsHo/CaptureScreen/blob/main/Snap!.rar)
+Unity project source file: Snap!(https://github.com/CidsHo/CaptureScreen/blob/main/Snap!.rar)
 
 ## 0. Preparation
 
