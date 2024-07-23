@@ -29,7 +29,7 @@ This will allow the application to read the screenshot storaged in the Quest3 he
 ## 2. Explaination
 
 <details>
-<summary>Detail</summary>
+<summary>ScreenshotLoader.cs</summary>
 <pre><code>
 *In progress*;
 </code></pre>
