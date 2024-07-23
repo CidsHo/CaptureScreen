@@ -10,7 +10,7 @@ Since Quest3 currently does not have camera access permissions, it is not possib
 
 Unity project source file: Snap!(https://github.com/CidsHo/CaptureScreen/blob/main/Snap!.rar)
 
-## 1. Configuration
+## Configuration
 
 1. Install [ScreenShotLoader](https://github.com/CidsHo/CaptureScreen/tree/main/ScreenShotLoader) in the project **Assets** and also load the Meta XR All-in-one SDK.
 2. In Unity, go to Edit > Project Settings > Player > Android > Publishing Settings > Build, check ***Custom Main Manifest, Custom Main Gradle Template, Custom Gradle Properties Template***. This will enable the use of AndroidManifest.xml, mainTemplate.gradle, and gradleTemplate.properties in Assets/Plugins/Android.
@@ -26,12 +26,46 @@ Unity project source file: Snap!(https://github.com/CidsHo/CaptureScreen/blob/ma
 ```
 This will allow the application to read the screenshot storaged in the Quest3 headset. (Further authorization is required in Horizon OS)
 
-## 2. Explaination
+## Explaination
 
 <details>
 <summary>ScreenshotLoader.cs</summary>
 <pre><code>
-*In progress*;
+1. Cite Buttons.	
+	
+```
+    [SerializeField] private Button requestPermissionButton = default!;
+    [SerializeField] private Button loadScreenShotButton = default!;
+```
+
+2. Add On-Click function.
+
+```
+        requestPermissionButton.onClick.AddListener(RequestPermission);
+        loadScreenShotButton.onClick.AddListener(loadScreenShot);
+```
+
+3. Request Permission → ScreenshotLoader.java
+   
+```
+ public void RequestPermission()
+    {
+        using (var unityPlayer = new AndroidJavaClass("com.unity3d.player.UnityPlayer"))
+        {
+            using (var currentActivity = unityPlayer.GetStatic<AndroidJavaObject>("currentActivity"))
+            {
+                using (var loaderClass = new AndroidJavaClass("com.example.screenshotloader.ScreenshotLoader"))
+                {
+                    loaderClass.CallStatic("requestPermissionIfNeeded", currentActivity);
+                    StartCoroutine(CheckPermissionCoroutine());
+                }
+            }
+        }
+    }
+```
+
+4. 
+
 </code></pre>
 </details>
 
