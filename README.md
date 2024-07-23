@@ -10,7 +10,7 @@ Since Quest3 currently does not have camera access permissions, it is not possib
 
 Unity project source file: Snap!(https://github.com/CidsHo/CaptureScreen/blob/main/Snap!.rar)
 
-## 0. Preparation
+## 0. Configuration
 
 1. Install [ScreenShotLoader](https://github.com/CidsHo/CaptureScreen/tree/main/ScreenShotLoader) in the project **Assets** and also load the Meta XR All-in-one SDK.
 2. In Unity, go to Edit > Project Settings > Player > Android > Publishing Settings > Build, check ***Custom Main Manifest, Custom Main Gradle Template, Custom Gradle Properties Template***. This will enable the use of AndroidManifest.xml, mainTemplate.gradle, and gradleTemplate.properties in Assets/Plugins/Android.
@@ -26,7 +26,7 @@ Unity project source file: Snap!(https://github.com/CidsHo/CaptureScreen/blob/ma
 ```
 This will allow the application to read the screenshot storaged in the Quest3 headset. (Further authorization is required in Horizon OS)
 
-## 1. Configuration
+## 1. Demonstration
 
 ## 2. Explaination
 
